@@ -23,13 +23,18 @@
   "files": [
     {"path":"README.md","type":"markdown","origin":"generated","bytes":3509,"sha256":"c630b37ffdec29aa9f2a3e2bc92a9457f1ce56f6c2b4b8e47e93c403a1049042","description":"정리 문서"},
     {"path":"index.html","type":"html","origin":"generated","bytes":6136,"sha256":"aa5181a545892cffd7a21a1fbd01040b079ecd053fbd0e043e86930bfbc1a76e","description":"브라우저 열람용 페이지"},
-    {"path":"images/01-band-size-guide.webp","type":"image/webp","origin":"derived","bytes":11672,"sha256":"e8920911c3507f2d61b0f6d1ae73863a6f4725eb5cd0ddd26119575ddda354e9","description":"원본 PNG의 웹 최적화본"},
-    {"path":"images/02-casio-lrw200h-4b2-pink-watch.jpg","type":"image/jpeg","origin":"derived","bytes":101484,"sha256":"69c3053bcc3f454ead81cf04c723894a577b87a0af96e431a9079d9b9847a832","description":"원본 PNG의 웹 최적화본"},
-    {"path":"source-inventory.csv","type":"text/csv","origin":"generated","bytes":609,"sha256":"8e5111e53f24cd680badfbc42240d8256d0fb7ea5b181e0e0be5d04edd0922fd","description":"배포 파일 목록"},
-    {"path":"verification-report.md","type":"markdown","origin":"generated","bytes":720,"sha256":"809e665e700754ae70fe248dc2999e534a7cb94e77e73939828067782fc19d6c","description":"검증 보고서"}
+    {"path":"images/01-band-size-guide.webp","type":"image/webp","origin":"derived","bytes":11672,"sha256":"e8920911c3507f2d61b0f6d1ae73863a6f4725eb5cd0ddd26119575ddda354e9","description":"밴드폭·버클폭 측정 참고 이미지 웹 최적화본"},
+    {"path":"images/02-casio-lrw200h-4b2-pink-watch.jpg","type":"image/jpeg","origin":"derived","bytes":5642,"sha256":"610dc94c8661d1a364b0aebdbfc698047abdf58dd57e6479c270d61b76a32a41","description":"LRW-200H-4B2 핑크 실물 사진 웹 최적화본"},
+    {"path":"source-inventory.csv","type":"text/csv","origin":"generated","bytes":863,"sha256":"09caa07ba0a71854b88e4243d2dcdf7dc82aaaa803d23fb1d974cb9b68849b58","description":"배포 파일 목록"},
+    {"path":"verification-report.md","type":"markdown","origin":"generated","bytes":1162,"sha256":"88abbca45c6539c6306a75bf4b29942b14bea645e04a7e49214d00a26cee7ec6","description":"검증 보고서"}
   ],
+  "download": {
+    "path": "downloads/20261007_Casio_LRW200H_4B2_시계줄_구매기록_WEB.zip",
+    "bytes": 50084,
+    "sha256": "baeba2dc6680cb505f7300d06d45963a84cfec5f7b0d9851c3ae19dd6460328d"
+  },
   "privacy": {
     "omitted": ["order number","order detail URL","shipping/payment data"]
   },
-  "mediaNote": "GitHub Pages uses optimized web copies; byte-identical PNG originals are preserved in the downloadable chat ZIP."
+  "mediaNote": "GitHub Pages uses optimized public image copies. WEB ZIP contains browser-friendly image copies and omits order-identifying data."
 }

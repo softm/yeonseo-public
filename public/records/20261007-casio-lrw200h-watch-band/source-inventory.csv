@@ -1,5 +1,6 @@
-﻿path,type,origin,bytes,sha256,description
+path,type,origin,bytes,sha256,description
 README.md,markdown,generated,3509,c630b37ffdec29aa9f2a3e2bc92a9457f1ce56f6c2b4b8e47e93c403a1049042,정리 문서
 index.html,html,generated,6136,aa5181a545892cffd7a21a1fbd01040b079ecd053fbd0e043e86930bfbc1a76e,브라우저 열람용 페이지
-images/01-band-size-guide.webp,image/webp,derived,11672,e8920911c3507f2d61b0f6d1ae73863a6f4725eb5cd0ddd26119575ddda354e9,원본 PNG의 웹 최적화본
-images/02-casio-lrw200h-4b2-pink-watch.jpg,image/jpeg,derived,101484,69c3053bcc3f454ead81cf04c723894a577b87a0af96e431a9079d9b9847a832,원본 PNG의 웹 최적화본
+images/01-band-size-guide.webp,image/webp,derived,11672,e8920911c3507f2d61b0f6d1ae73863a6f4725eb5cd0ddd26119575ddda354e9,밴드폭·버클폭 측정 참고 이미지 웹 최적화본
+images/02-casio-lrw200h-4b2-pink-watch.jpg,image/jpeg,derived,5642,610dc94c8661d1a364b0aebdbfc698047abdf58dd57e6479c270d61b76a32a41,LRW-200H-4B2 핑크 실물 사진 웹 최적화본
+downloads/20261007_Casio_LRW200H_4B2_시계줄_구매기록_WEB.zip,application/zip,generated,50084,baeba2dc6680cb505f7300d06d45963a84cfec5f7b0d9851c3ae19dd6460328d,MD·HTML·이미지 포함 WEB 아카이브 ZIP
