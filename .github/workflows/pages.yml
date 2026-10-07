@@ -1,0 +1,75 @@
+name: Deploy GitHub Pages
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - DEPLOYED_PAGE_URL.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pages preflight
+        id: preflight
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh api "/repos/${{ github.repository }}/pages" >/dev/null 2>&1; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "GitHub Pages is enabled."
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::GitHub Pages must be enabled once in Settings > Pages with Source = GitHub Actions."
+          fi
+
+      - name: Configure GitHub Pages
+        if: steps.preflight.outputs.ready == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Assemble public archive site
+        if: steps.preflight.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          cp index.html _site/index.html
+          if [ -d public ]; then cp -a public/. _site/; fi
+          touch _site/.nojekyll
+
+      - name: Upload Pages artifact
+        if: steps.preflight.outputs.ready == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        if: steps.preflight.outputs.ready == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Record deployed URL
+        if: steps.preflight.outputs.ready == 'true'
+        run: |
+          printf '%s\n' "${{ steps.deployment.outputs.page_url }}" > DEPLOYED_PAGE_URL.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add DEPLOYED_PAGE_URL.txt
+          git commit -m "Record deployed Pages URL [skip ci]" || exit 0
+          git push
